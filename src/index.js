@@ -4,4 +4,31 @@ import ReactDOM from 'react-dom'
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import { firebase } from './firebase/firebase';
+import { Provider } from 'react-redux';
+import configureStore from './store/configureStore';
+
+const store = configureStore();
+
+
+ReactDOM.render(
+  <React.StrictMode>
+    <Provider store={store}> 
+    <App />
+    </Provider>
+  </React.StrictMode>, document.getElementById('root')
+);
+
+
+firebase.auth().onAuthStateChanged((user) => {
+    if(user) {
+      console.log('Log in');
+      sessionStorage.setItem('isLoggedIn', true);
+      sessionStorage.setItem('uid', user.uid)
+
+    } else {
+      console.log('Log out');
+      sessionStorage.setItem('isLoggedIn', false);
+      sessionStorage.setItem('uid','');
+    }
+  })

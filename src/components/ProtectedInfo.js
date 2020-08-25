@@ -1,6 +1,5 @@
 import React from 'react';
 import './Page.css';
-import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 
 const ProtectedInfo = (props) => {
@@ -8,7 +7,6 @@ const ProtectedInfo = (props) => {
     return (
         <div className="container protected-container">
         <Container>
-
                 <Row>
                     <Col xs={12} lg={6}>
                         {props.secretData.code !== "69" ?

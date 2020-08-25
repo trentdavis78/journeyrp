@@ -6,15 +6,14 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
+import { Container, Row, Col, Navbar, Nav } from 'react-bootstrap';
 import Home from './components/Home';
 import FAQ from './components/FAQ';
-import './App.css';
 import ProtectedInfo from './components/ProtectedInfo';
+import Login from './components/Login';
 import jrpBg from './images/jrpBg.webp';
 import jrpLogo from './images/jrpLoreLogo.png';
-import { Container, Row, Col } from 'react-bootstrap';
+import './App.css';
 
 
 export default function App() {
@@ -25,8 +24,8 @@ export default function App() {
 
   useEffect(() => {
     console.log("Mounted")
-  },[]);
-  
+  }, []);
+
   const checkCode = (inputValue) => {
     database.ref().once('value')
       .then((snapshot) => {
@@ -40,7 +39,7 @@ export default function App() {
           } else {
             setInvalidCode(true);
             setInputValue('');
-            
+
           }
         })
 
@@ -54,56 +53,58 @@ export default function App() {
   return (
     <Router>
       <div className="app-container">
-        <Navbar bg="dark" variant="dark">
-          <Navbar.Brand href="#home">
-            JRP Lore Revealer
-                    </Navbar.Brand>
+        <Navbar bg="dark" variant="dark" expand="lg">
+        <Navbar.Brand href="/">JRP Lore Revealer</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
             <Nav.Link href="/">Codes</Nav.Link>
             <Nav.Link href="/faq">FAQ</Nav.Link>
             <Nav.Link href="http://www.journeyrp.com/">Back to JRP.com</Nav.Link>
           </Nav>
+          <Login />
+        </Navbar.Collapse>
         </Navbar>
-        <Switch>
-          <Route path="/" exact render={
-            () => isAuthenticated ? <ProtectedInfo secretData={secretData} />
-              : <Home
-                inputValue={inputValue}
-                invalidCode={invalidCode}
-                setInputValue={setInputValue}
-                setInvalidCode={setInvalidCode}
-                checkCode={checkCode}
-              />
-          } />
-          <Route path="/faq">
-            <FAQ />
-          </Route>
-        </Switch>
-        <div className="main">
-          <Container>
-            <Row>
-              <Col xs={12}>
-                <img className="logo" alt="JRP Logo" src={jrpLogo} />
-              </Col>
-            </Row>
-          </Container>
-          <div style={{
-            backgroundColor: '#000000',
-            position: 'absolute',
-            top: 250,
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            minWidth: '1320px',
-            minHeight: 800,
-            marginTop: '400px'
-          }}>&nbsp;</div>
+      <Switch>
+        <Route path="/" exact render={
+          () => isAuthenticated ? <ProtectedInfo secretData={secretData} />
+            : <Home
+              inputValue={inputValue}
+              invalidCode={invalidCode}
+              setInputValue={setInputValue}
+              setInvalidCode={setInvalidCode}
+              checkCode={checkCode}
+            />
+        } />
+        <Route path="/faq">
+          <FAQ />
+        </Route>
+      </Switch>
+      <div className="main">
+        <Container>
+          <Row>
+            <Col xs={12}>
+              <img className="logo" alt="JRP Logo" src={jrpLogo} />
+            </Col>
+          </Row>
+        </Container>
+        <div style={{
+          backgroundColor: '#000000',
+          position: 'absolute',
+          top: 250,
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          minWidth: '1320px',
+          minHeight: 800,
+          marginTop: '400px'
+        }}>&nbsp;</div>
 
-          <img alt="bg" src={jrpBg} width="100%" />
+        <img alt="bg" src={jrpBg} width="100%" />
 
 
-        </div>
       </div>
-    </Router>
+      </div>
+    </Router >
   );
 }
 

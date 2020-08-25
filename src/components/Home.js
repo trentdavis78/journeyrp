@@ -1,23 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Home.css';
 import { Form } from 'react-bootstrap';
-import { Button, Container, Row, Col } from 'react-bootstrap';
+import { Button  } from 'react-bootstrap';
 
 
-const Home = ({ inputValue, invalidCode, setInputValue, setInvalidCode, checkCode }) => {
-    const [invalidCodeCount, setInvalidCodeCount] = useState(0);
-    console.log(invalidCode)
-    // const getIP = async () => {
-    //     const response = await fetch('http://api.ipify.org/?format=json');
-    //     const data = await response.json();
-    //     return data;
-    // }
-    // getIP().then(data => console.log(data));
-    const errorMsgArray = [
-                            'Invalid Code!',
-                            'Stop Guessing!!',
-                            'Last warning, you are about to get banned!!!'
-                            ]
+const Home = ({ inputValue, invalidCode, setInputValue, checkCode }) => {
     return (
         <div className="container home-container">
             <div className="form-container">
@@ -38,7 +25,7 @@ const Home = ({ inputValue, invalidCode, setInputValue, setInvalidCode, checkCod
                 
                 <div className="error-container">
                     {' '}
-                    {invalidCode && <small style={{color:'red'}}>{errorMsgArray[invalidCodeCount]}</small>}
+                    {invalidCode && <small style={{color:'red'}}>Invalid Code!</small>}
                 </div>
                 <div className="button-container">
                     <Button 
