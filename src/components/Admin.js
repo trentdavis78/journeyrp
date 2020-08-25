@@ -8,7 +8,7 @@ export default function Admin() {
     const [hasAdminCreds, setHasAdminCreds] = useState(false);
     const [loreCode, setLoreCode] = useState('');
     const [loreTitle, setLoreTitle] = useState('');
-    const [loreImageUrl, setLoreImageUrl] = useState('default value');
+    const [loreImageUrl, setLoreImageUrl] = useState('');
     const [loreDesc, setLoreDesc] = useState('');
     const [successfulSubmit, setSuccessfulSubmit] = useState(false);
     const [submitError, setSubmitError] = useState('');

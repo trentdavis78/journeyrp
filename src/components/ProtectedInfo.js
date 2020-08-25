@@ -3,7 +3,13 @@ import './Page.css';
 import { Container, Row, Col } from 'react-bootstrap';
 
 const ProtectedInfo = ({ secretData }) => {
-    console.log(secretData)
+    let imgUrl;
+    if(secretData.imgUrl === '') {
+        imgUrl = "https://www.tibs.org.tw/images/default.jpg";
+    } else {
+        imgUrl = secretData.imgUrl;
+    }
+    console.log(secretData);
     return (
         <div className="container protected-container">
             <Container>
@@ -14,7 +20,7 @@ const ProtectedInfo = ({ secretData }) => {
                     </Col>
                     <Col xs={12} lg={6}>
                         <img
-                            src={secretData.imgUrl}
+                            src={imgUrl}
                             alt={secretData.title}
                             className="loreImage"
                         />
