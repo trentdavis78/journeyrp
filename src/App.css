@@ -1,0 +1,54 @@
+@font-face {
+    font-family: "ark";
+    src: url('./fonts/ARK-Regular.ttf');    
+  }
+
+body {
+    background-color: black !important;
+}
+
+.main {
+    height:100vh;    
+    position:absolute;
+    top:0;
+    left:-1px;
+    width:100%;
+    z-index: -1;
+}
+
+.logo {
+    position: absolute;
+    top:175px;
+    left:50%; 
+    transform: translate(-50%, -50%);
+    z-index:999;
+}
+
+.bg-dark {
+background-image: linear-gradient(to right, #000, #18191d 100%);
+}
+
+.app-container {
+    position: relative;
+    height: 100vh;
+    color:#d0d0d0;
+    font-family: "ark";
+    font-size: 16px;
+    text-transform: uppercase;
+
+}
+
+.navbar-nav a:hover,
+.navbar-nav a:active {
+    font-family: "ark";
+    color: #9acd32 !important;
+}
+
+
+@media screen and (max-width: 960px) {
+    .logo {
+      width: 230px;
+      top:145px;
+ 
+    }
+  }

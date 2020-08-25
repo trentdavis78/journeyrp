@@ -1,0 +1,36 @@
+.protected-container {
+    background-color: #131313;
+    position: relative;
+    top: 35%;
+    border-radius: 5px;
+    padding: 20px;
+    
+}
+.faq-container,.protected-container {
+    position: relative;
+    top: 35%;
+    background-color: #131313;
+    width: 95%;
+    border-radius: 5px;
+    padding: 20px;
+    min-height: 400px;
+}
+
+.protected-container img,
+.protected-container iframe {
+    display: block;
+    margin: auto;
+    width: 500px;
+    max-width: 90%;
+}
+
+  @media only screen and (max-width: 960px) {
+    .protected-container, .faq-container {
+      position: relative;
+      top: 25%;
+      max-width: 90%;
+    }
+    .protected-content {
+        margin-top: 40px;
+    }
+  }
