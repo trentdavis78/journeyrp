@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { startLogin, startLogout } from '../actions/auth';
 import { loginAction, logoutAction } from '../actions/authActions';
+import { FiLogIn } from "react-icons/fi";
 
 export const Login = ({ auth, startLogin, startLogout, loginAction, logoutAction }) => {
 
@@ -9,7 +10,7 @@ export const Login = ({ auth, startLogin, startLogout, loginAction, logoutAction
     return (
         <div>
             {auth.isLoggedIn === 'true' ? <button onClick={() => { startLogout(); logoutAction(false) }}>Logout</button> 
-                                        : <button onClick={() => { startLogin(); loginAction(true) }}>Login</button>}
+                                        : <FiLogIn onClick={() => { startLogin(); loginAction(true) }}/>}
         </div>
     )
 };
