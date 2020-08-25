@@ -3,14 +3,16 @@ import { connect } from 'react-redux';
 import { startLogin, startLogout } from '../actions/auth';
 import { loginAction, logoutAction } from '../actions/authActions';
 import { FiLogIn } from "react-icons/fi";
+import AdminMenu from './AdminMenu';
 
 export const Login = ({ auth, startLogin, startLogout, loginAction, logoutAction }) => {
 
     console.log(auth);
+
     return (
         <div>
-            {auth.isLoggedIn === 'true' ? <button onClick={() => { startLogout(); logoutAction(false) }}>Logout</button> 
-                                        : <FiLogIn onClick={() => { startLogin(); loginAction(true) }}/>}
+            {auth.isLoggedIn === 'true' ? <AdminMenu startLogout={startLogout} />
+                                        : <FiLogIn style={{cursor:'pointer'}} onClick={() => { startLogin(); loginAction(true) }}/>}
         </div>
     )
 };

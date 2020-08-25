@@ -44,6 +44,15 @@ background-image: linear-gradient(to right, #000, #18191d 100%);
     color: #9acd32 !important;
 }
 
+.profilePic {
+    width: 25px;
+    border-radius: 50%;
+}
+button#dropdown-menu-align-right {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
 
 @media screen and (max-width: 960px) {
     .logo {

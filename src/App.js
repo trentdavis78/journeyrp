@@ -61,7 +61,6 @@ export default function App() {
           <Nav className="mr-auto">
             <Nav.Link href="/">Codes</Nav.Link>
             <Nav.Link href="/faq">FAQ</Nav.Link>
-            <Nav.Link href="/admin">Admin</Nav.Link>
             <Nav.Link href="http://www.journeyrp.com/">Back to JRP.com</Nav.Link>
           </Nav>
           <Login />

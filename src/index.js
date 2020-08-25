@@ -21,14 +21,17 @@ ReactDOM.render(
 
 
 firebase.auth().onAuthStateChanged((user) => {
+    console.log(user)
     if(user) {
       console.log('Log in');
       sessionStorage.setItem('isLoggedIn', true);
-      sessionStorage.setItem('uid', user.uid)
+      sessionStorage.setItem('uid', user.uid);
+      sessionStorage.setItem('photoURL', user.photoURL);
 
     } else {
       console.log('Log out');
       sessionStorage.setItem('isLoggedIn', false);
-      sessionStorage.setItem('uid','');
+      sessionStorage.setItem('uid', '');
+      sessionStorage.setItem('photoURL', '');
     }
   })
