@@ -28,6 +28,7 @@ export default function Admin() {
                     if (uid === userData.uid) {
                         setHasAdminCreds(true);
                     }
+                    return uid;
                 })
             });
     }, [userData]);
