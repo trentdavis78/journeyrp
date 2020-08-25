@@ -9,6 +9,7 @@ import {
 import { Container, Row, Col, Navbar, Nav } from 'react-bootstrap';
 import Home from './components/Home';
 import FAQ from './components/FAQ';
+import Admin from './components/Admin';
 import ProtectedInfo from './components/ProtectedInfo';
 import Login from './components/Login';
 import jrpBg from './images/jrpBg.webp';
@@ -60,6 +61,7 @@ export default function App() {
           <Nav className="mr-auto">
             <Nav.Link href="/">Codes</Nav.Link>
             <Nav.Link href="/faq">FAQ</Nav.Link>
+            <Nav.Link href="/admin">Admin</Nav.Link>
             <Nav.Link href="http://www.journeyrp.com/">Back to JRP.com</Nav.Link>
           </Nav>
           <Login />
@@ -78,6 +80,9 @@ export default function App() {
         } />
         <Route path="/faq">
           <FAQ />
+        </Route>
+        <Route path="/admin">
+          <Admin />
         </Route>
       </Switch>
       <div className="main">

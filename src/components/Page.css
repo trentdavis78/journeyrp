@@ -6,7 +6,7 @@
     padding: 20px;
     
 }
-.faq-container,.protected-container {
+.faq-container,.protected-container, .admin-container {
     position: relative;
     top: 35%;
     background-color: #131313;
@@ -25,7 +25,7 @@
 }
 
   @media only screen and (max-width: 960px) {
-    .protected-container, .faq-container {
+    .protected-container, .faq-container, .admin-container {
       position: relative;
       top: 25%;
       max-width: 90%;

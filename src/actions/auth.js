@@ -4,7 +4,7 @@ export const startLogin = () => {
     return () => {
         return firebase.auth().signInWithPopup(googleAuthProvider).then(() => {
             console.log("Signed in from actions/auth");
-            window.location.href = '/faq';
+            window.location.href = '/admin';
         });
     };
 }
