@@ -15,13 +15,32 @@
     padding: 20px;
     min-height: 400px;
 }
-
-.protected-container img,
-.protected-container iframe {
+.protected-container {
+  min-height: 520px;
+}
+.protected-container img {
     display: block;
     margin: auto;
     width: 500px;
     max-width: 90%;
+}
+
+.adminForm-container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.formMessage {
+  min-height: 25px;
+  margin-bottom: 20px;
+}
+
+.red {
+  color: red;
+}
+
+.success {
+  color: #9acd32;
 }
 
   @media only screen and (max-width: 960px) {

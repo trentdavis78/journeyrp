@@ -11,22 +11,7 @@ const config = {
     measurementId: "G-3BPBJH61QC"
   };
 
-
-
   firebase.initializeApp(config);
-
-  const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
-  
+  const googleAuthProvider = new firebase.auth.GoogleAuthProvider();  
   export { firebase, googleAuthProvider  };
-
   export const database = firebase.database();
-
-// database.ref().push({
-//     code: '42',
-//     imgSrc: 'https://m.media-amazon.com/images/I/61uKflIpsdL.jpg'
-// }).then(() => {
-//     console.log('Data is saved')
-// }).catch((err) => {
-//     console.log(`error: ${err}`)
-// });
-

@@ -9,7 +9,6 @@ export const startLogin = () => {
     };
 }
 
-
 export const startLogout = () => {
     return () => {
         return  firebase.auth().signOut().then(() => {
@@ -18,11 +17,3 @@ export const startLogout = () => {
         });
     };
 }
-
-// export const startLogout = () => {
-//     firebase.auth().signOut().then(function() {
-//         console.log("Signed out from actions/auth")
-//       }).catch(function(error) {
-//         console.log(error)
-//       });
-// }

@@ -22,13 +22,11 @@ export default function App() {
   const [invalidCode, setInvalidCode] = useState(false);
   const [isAuthenticated, setAuthenticated] = useState(false);
   const [secretData, setSecretData] = useState({});
-
   useEffect(() => {
     console.log("Mounted")
   }, []);
-
   const checkCode = (inputValue) => {
-    database.ref().once('value')
+    database.ref('lore').once('value')
       .then((snapshot) => {
         snapshot.forEach((childsnap) => {
           const val = childsnap.val()
@@ -49,8 +47,6 @@ export default function App() {
         console.log('Error fetching data', e);
       });
   }
-
-
   return (
     <Router>
       <div className="app-container">
@@ -95,18 +91,15 @@ export default function App() {
         <div style={{
           backgroundColor: '#000000',
           position: 'absolute',
-          top: 250,
+          top: 500,
           left: '50%',
           transform: 'translate(-50%, -50%)',
-          minWidth: '1320px',
-          minHeight: 800,
+          minWidth: 1320,
+          minHeight: 1300,
           marginTop: '400px'
         }}>&nbsp;</div>
-
         <img alt="bg" src={jrpBg} width="100%" />
-
-
-      </div>
+        </div>
       </div>
     </Router >
   );

@@ -6,9 +6,7 @@ import { FiLogIn } from "react-icons/fi";
 import AdminMenu from './AdminMenu';
 
 export const Login = ({ auth, startLogin, startLogout, loginAction, logoutAction }) => {
-
-    console.log(auth);
-
+    
     return (
         <div>
             {auth.isLoggedIn === 'true' ? <AdminMenu startLogout={startLogout} />

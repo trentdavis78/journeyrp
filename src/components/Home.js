@@ -3,7 +3,6 @@ import './Home.css';
 import { Form } from 'react-bootstrap';
 import { Button  } from 'react-bootstrap';
 
-
 const Home = ({ inputValue, invalidCode, setInputValue, checkCode }) => {
     return (
         <div className="container home-container">
