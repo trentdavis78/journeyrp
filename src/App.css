@@ -53,6 +53,11 @@ button#dropdown-menu-align-right {
     border: none;
     box-shadow: none;
 }
+.dropdown-item.active, .dropdown-item:active {
+    color: #9acd32 !important;
+    text-decoration: none;
+    background-color: #131313 !important;
+}
 
 @media screen and (max-width: 960px) {
     .logo {
