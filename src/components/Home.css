@@ -12,6 +12,7 @@
   
   .form-container {
       background-color: #131313;
+      position: relative;
       width: 400px;
       height: 360px;
       padding: 20px;
@@ -28,7 +29,15 @@
   }
 
   .button-container {
-    margin-top: 40px;
+    position: absolute;
+    bottom: 20px;
+    width:90%;
+    margin: 0 auto;
+  }
+  .btn-dark:disabled,
+  .btn-dark:disabled:hover {
+    background-color: grey !important;
+    border-color: grey !important;
   }
 
   .form-container label.form-label {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Home.css';
 import { Form } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
@@ -7,10 +7,13 @@ import Reaptcha from 'reaptcha';
 const Home = ({ inputValue, invalidCode, setInputValue, checkCode }) => {
     const [verified, setVerified] = useState(false);
 
-    const onVerify = recaptchaResponse => {
+    const onVerify = (recaptchaResponse) => {
         setVerified(true);
-        console.log(recaptchaResponse);
+        console.log(recaptchaResponse);        
     }
+    useEffect(() => {
+        setTimeout(() => { alert('invalid') },100)
+    },[])
     return (
         <div className="container home-container">
             <div className="form-container">
