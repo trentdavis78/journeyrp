@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState  } from 'react';
 import './Home.css';
 import { Form } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
@@ -11,9 +11,7 @@ const Home = ({ inputValue, invalidCode, setInputValue, checkCode }) => {
         setVerified(true);
         console.log(recaptchaResponse);        
     }
-    useEffect(() => {
-        setTimeout(() => { alert('invalid') },100)
-    },[])
+
     return (
         <div className="container home-container">
             <div className="form-container">
@@ -25,7 +23,6 @@ const Home = ({ inputValue, invalidCode, setInputValue, checkCode }) => {
                             placeholder="ex: 0x23sdesw390ndsfyl49"
                             value={inputValue}
                             onChange={(e) => setInputValue(e.target.value)}
-                        // onFocus={() => setInvalidCode(false)}
                         />
                         <Form.Text className="text-muted">
                             Codes can be found by Scholars throughout the world of JourneyRP
@@ -37,7 +34,11 @@ const Home = ({ inputValue, invalidCode, setInputValue, checkCode }) => {
                         {invalidCode && <small style={{ color: 'red' }}>Invalid Code!</small>}
                     </div>
                     <div className="recaptcha">
-                    <Reaptcha sitekey="6LeEzcMZAAAAAF8x9EtM_sNLe1evEBO_86Oiqw0M" onVerify={onVerify} />
+                    <Reaptcha 
+                            sitekey="6LeEzcMZAAAAAF8x9EtM_sNLe1evEBO_86Oiqw0M" 
+                            onVerify={onVerify} 
+                           
+                    />
                 </div>
                     <div className="button-container">
                         <Button
